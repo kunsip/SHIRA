@@ -1,0 +1,83 @@
+/**
+Features not supported in mini
+**/
+
+html,body {
+    min-height:100%;
+    font-size:20px;
+}
+
+body {
+    padding: 1rem;
+}
+
+.content {
+    margin-top:2rem;
+}
+
+.search {
+    padding-left:1rem;
+    padding-right:1rem;
+    width: calc(100% - 2rem);
+    height:3rem;
+    top:0;
+    left:0;
+    position:fixed;
+    z-index: 3;
+}
+
+input[type="search"] {    
+    border:0
+}
+.search > input {
+    min-width: 100%;
+    padding: 0.5rem;
+}
+
+.footer {
+    min-height: 1.5rem;
+    max-height: 1.5rem;
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background-color: white;
+    z-index:3;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.item {
+    padding-left:1rem;
+    padding-right:1rem;
+    max-height: 1.25rem;
+    min-height: 1.25rem;
+    max-width:50%;
+    font-weight: 900;
+}
+
+.note{
+    margin-top:0.75rem;
+}
+
+.note:last-child{
+    margin-bottom: 50%;
+}
+
+.scrollShadow {
+    background: 
+      linear-gradient(#ffffff 30%, rgba(255,255,255, 0)),
+      linear-gradient(rgba(255,255,255, 0), #ffffff 70%) 0 100%,
+      radial-gradient(farthest-side at 50% 0, rgba(34,34,34, 0.5), rgba(0,0,0,0)),
+      radial-gradient(farthest-side at 50% 100%, rgba(34,34,34, 0.5), rgba(0,0,0,0)) 0 100%;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: local, local, scroll, scroll;
+    background-size: 100% 10px, 100% 10px, 100% 5px, 100% 5px;
+  }
