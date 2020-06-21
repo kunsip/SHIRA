@@ -3,4 +3,3 @@ microservice_server:
     include:
       - local: Software/server/.gitlab-ci.yml
     strategy: depend
-
