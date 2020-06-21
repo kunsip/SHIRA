@@ -7,7 +7,7 @@
     Deliverables: 
     - Concrete goals of SHIRA with top 3 goals [Done]
     - 1 Year Roadmap with weekly goals [Done]
-    - Understanding of Elixir and Phoenix
+    - Understanding of Elixir and Phoenix [In-Progress]
     - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to ) [In-Progress]
 
 #### 4th Week
@@ -16,12 +16,14 @@
     - Setup Forward Facing Server via GreenGeeks
     - Setup CI for Elixir
     - Setup Website
+    - 2/3rds Done Elixir book
 ### July
 #### 1st Week
     - Design Intentions with SMART setup (Specific, Measurable, Actionable, Reasonable and Timely)
     - Design ZUI Concept
     - Implement Extremely Simple Note Feature
     - Implement Intention Screen
+    - Finish Elixir book
 #### 2nd Week
     - Create Design Pallet and Goals
     - Design Bottom row of options and top row

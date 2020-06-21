@@ -1,0 +1,1 @@
+This workspace allows you to work on SHIRA without worrying about accidentally pushing changes to SHIRA.
