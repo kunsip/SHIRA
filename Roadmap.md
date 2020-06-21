@@ -7,11 +7,12 @@
     Deliverables: 
     - Concrete goals of SHIRA with top 3 goals [Done]
     - 1 Year Roadmap with weekly goals [Done]
-    - Understanding of Elixir and Phoenix [In-Progress]
-    - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to ) [In-Progress]
+    - Understanding of Elixir and Phoenix [Done]
+    - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to ) [Done]
 
 #### 4th Week
     - Setup Programming and Commit Standards
+    - Make Local Workspace git-ignored
     - Setup Login and Signup
     - Setup Forward Facing Server via GreenGeeks
     - Setup CI for Elixir
