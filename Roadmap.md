@@ -8,7 +8,7 @@
     - Concrete goals of SHIRA with top 3 goals [Done]
     - 1 Year Roadmap with weekly goals [Done]
     - Understanding of Elixir and Phoenix
-    - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to )
+    - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to ) [In-Progress]
 
 #### 4th Week
     - Setup Programming and Commit Standards
@@ -168,8 +168,8 @@
  
     Intention (Long Press, show Timeline of last few intentions)
         When in Intention (Simple Screen with Search Bar)
-    Notes (Long Press, show Heatmap of last acccessed Notes)
-        When in Notes (ZUI, calling notes to reduce user acroynm fatigue)
+    Notes (Long Press, show Heatmap of last accessed Notes)
+        When in Notes (ZUI, calling notes to reduce user acronym fatigue)
     Activity (Long Press, show Timeline)
         When in Activity
 
