@@ -27,6 +27,22 @@ stage_2_unreachable_code:
   script:
    - mix format --warnings-as-errors
 
-stage_3_static_analysis_of_code
+stage_3_static_analysis_of_code_credo:
   script:
-     - mix credo --strict
+   - mix credo --strict
+
+stage_4_static_analysis_of_code_dialyzer:
+  script:
+   - mix dialyzer
+
+stage_5_code_doc_test:
+  script:
+   - mix test
+
+stage_6_code_coverage:
+  script: 
+   - mix coveralls
+
+stage_7_phoenix_security:
+  script:
+   - mix sobelow
