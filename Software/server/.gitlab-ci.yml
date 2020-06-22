@@ -18,37 +18,9 @@ before_script:
   - mix ecto.create
   - mix ecto.migrate
 
-stages:
-  - test
+mix:
+  script:
+    #Stage 1 Code Format
+    - mix format --check-formatted
 
-test-stage1CodeFormat:
-  stage: test
-  script: mix format --check-formatted
-
-test-stage2UnreachableCode:
-  stage: test
-  script: mix format --warnings-as-errors
-
-test-stage3StaticAnalysisOfCodeWithCredo
-  stage: test
-  script: mix credo --strict
-
-test-stage3StaticAnalysisOfCodeWithDyelixir
-  stage: test
-  script: mix dialyzer
-
-test-stage4StaticAnalysisOfDocumentationCode
-  stage: test
-  script: mix doctor
-  
-test-stage5CodeTestAndDocumentationTest
-  stage: test
-  script: mix test
-
-test-stage6CodeCoverage
-  stage: test
-  script: mix coveralls
-
-test-stage7PhoenixSecurity
-  stage: test
-  script: mix sobelow
+t
