@@ -1,4 +1,3 @@
 defmodule ServerWeb.UserView do
-    use ServerWeb, :view
-
+  use ServerWeb, :view
 end

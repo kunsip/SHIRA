@@ -21,42 +21,34 @@ before_script:
 stages:
   - test
 
-test_stage1CodeFormat:
+test-stage1CodeFormat:
   stage: test
-  script:
-    - mix format --check-formatted
+  script: mix format --check-formatted
 
-test_stage2UnreachableCode:
+test-stage2UnreachableCode:
   stage: test
-  script:
-    - mix format --warnings-as-errors
+  script: mix format --warnings-as-errors
 
-test_stage3StaticAnalysisOfCodeWithCredo
+test-stage3StaticAnalysisOfCodeWithCredo
   stage: test
-  script:
-    - mix credo --strict
+  script: mix credo --strict
 
-test_stage3StaticAnalysisOfCodeWithDyelixir
+test-stage3StaticAnalysisOfCodeWithDyelixir
   stage: test
-  script:
-    - mix dialyzer
+  script: mix dialyzer
 
-test_stage4StaticAnalysisOfDocumentationCode
+test-stage4StaticAnalysisOfDocumentationCode
   stage: test
-  script:
-    - mix doctor
+  script: mix doctor
   
-test_stage5CodeTestAndDocumentationTest
+test-stage5CodeTestAndDocumentationTest
   stage: test
-  script:
-    - mix test
+  script: mix test
 
-test_stage6CodeCoverage
+test-stage6CodeCoverage
   stage: test
-  script:
-    - mix coveralls
+  script: mix coveralls
 
-test_stage7PhoenixSecurity
+test-stage7PhoenixSecurity
   stage: test
-  script:
-    - mix sobelow
+  script: mix sobelow

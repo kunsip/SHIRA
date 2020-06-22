@@ -23,7 +23,7 @@ defmodule ServerWeb.Router do
   # Other scopes may use custom stacks.
   # scope "/api", ServerWeb do
   #   pipe_through :api
-    
+
   #   scope "v1", Api.V1 do
   #     resources "/magiclink", MagicLinkController, only: [:create] //Not impelemented yet
   #   end
