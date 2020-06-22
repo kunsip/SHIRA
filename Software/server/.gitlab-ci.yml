@@ -22,7 +22,11 @@ stage_1_code_format:
   script:
    #Stage 1 Code Format
    - mix format --check-formatted
-   
+
 stage_2_unreachable_code:
   script:
    - mix format --warnings-as-errors
+
+stage_3_static_analysis_of_code
+  script:
+     - mix credo --strict
