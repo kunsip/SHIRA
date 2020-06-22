@@ -18,34 +18,45 @@ before_script:
   - mix ecto.create
   - mix ecto.migrate
 
-stage1CodeFormat:
+stages:
+  - test
+
+test_stage1CodeFormat:
+  stage: test
   script:
     - mix format --check-formatted
 
-stage2UnreachableCode:
+test_stage2UnreachableCode:
+  stage: test
   script:
     - mix format --warnings-as-errors
 
-stage3StaticAnalysisOfCodeWithCredo
+test_stage3StaticAnalysisOfCodeWithCredo
+  stage: test
   script:
     - mix credo --strict
 
-stage3StaticAnalysisOfCodeWithDyelixir
+test_stage3StaticAnalysisOfCodeWithDyelixir
+  stage: test
   script:
     - mix dialyzer
 
-stage4StaticAnalysisOfDocumentationCode
+test_stage4StaticAnalysisOfDocumentationCode
+  stage: test
   script:
     - mix doctor
   
-stage5CodeTestAndDocumentationTest
+test_stage5CodeTestAndDocumentationTest
+  stage: test
   script:
     - mix test
 
-stage6CodeCoverage
+test_stage6CodeCoverage
+  stage: test
   script:
     - mix coveralls
 
-stage7PhoenixSecurity
+test_stage7PhoenixSecurity
+  stage: test
   script:
     - mix sobelow
