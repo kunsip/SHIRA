@@ -49,7 +49,7 @@ defmodule Server.MixProject do
       {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false},
-      {:doctor, "~> 0.14.0", only: [:dev, :test], runtime: false},
+      {:doctor, "~> 0.14.0", only: [:dev, :test], runtime: false}
     ]
   end
 
