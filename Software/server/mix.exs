@@ -11,7 +11,6 @@ defmodule Server.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [coveralls: :test]
     ]
   end
@@ -51,7 +50,6 @@ defmodule Server.MixProject do
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false},
       {:doctor, "~> 0.14.0", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.10", only: [:dev, :test], runtime: false}
     ]
   end
 
