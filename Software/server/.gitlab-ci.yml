@@ -35,10 +35,6 @@ stage_4_code_doc_test:
   script:
    - mix test
 
-stage_5_code_coverage:
-  script: 
-   - mix coveralls
-
-stage_6_phoenix_security:
+stage_5_phoenix_security:
   script:
    - mix sobelow
