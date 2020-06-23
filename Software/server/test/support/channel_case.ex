@@ -22,7 +22,6 @@ defmodule ServerWeb.ChannelCase do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
       import ServerWeb.ChannelCase
-      alias Ecto.Adaptors.SQL.Sandbox
 
       # The default endpoint for testing
       @endpoint ServerWeb.Endpoint
@@ -33,7 +32,7 @@ defmodule ServerWeb.ChannelCase do
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(Server.Repo)
 
     unless tags[:async] do
-      Sandbox.mode(Server.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Server.Repo, {:shared, self()})
     end
 
     :ok

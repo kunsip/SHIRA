@@ -33,7 +33,7 @@ defmodule ServerWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Sandbox.checkout(Server.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Server.Repo)
 
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Server.Repo, {:shared, self()})
