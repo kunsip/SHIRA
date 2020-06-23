@@ -12,8 +12,7 @@ defmodule Server.MixProject do
       aliases: aliases(),
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test],
-      
+      preferred_cli_env: [coveralls: :test]
     ]
   end
 
@@ -48,12 +47,11 @@ defmodule Server.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:dialyxir, "~> 1.0", only: [:dev,:test], runtime: false},
+      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false},
       {:doctor, "~> 0.14.0", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.10", only: [:dev, :test],runtime: false},
-
+      {:excoveralls, "~> 0.10", only: [:dev, :test], runtime: false}
     ]
   end
 
