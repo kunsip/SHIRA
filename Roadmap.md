@@ -12,7 +12,7 @@
 
 #### 4th Week
     - Setup Programming and Commit Standards [Done]
-    - Make Local Workspace git-ignored
+    - Make Local Workspace git-ignored [Done]
     - Setup Login and Signup
     - Setup Forward Facing Server via GreenGeeks
     - Setup CI for Elixir [IP]
