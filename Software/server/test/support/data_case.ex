@@ -24,11 +24,12 @@ defmodule Server.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import Server.DataCase
+      alias Ecto.Adaptors.SQL.Sandbox
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Server.Repo)
+    :ok = Sandbox.checkout(Server.Repo)
 
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Server.Repo, {:shared, self()})

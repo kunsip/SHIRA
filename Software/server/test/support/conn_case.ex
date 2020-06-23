@@ -23,6 +23,7 @@ defmodule ServerWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import ServerWeb.ConnCase
+      alias Ecto.Adaptors.SQL.Sandbox
 
       alias ServerWeb.Router.Helpers, as: Routes
 
@@ -32,7 +33,7 @@ defmodule ServerWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Server.Repo)
+    :ok = Sandbox.checkout(Server.Repo)
 
     unless tags[:async] do
       Ecto.Adapters.SQL.Sandbox.mode(Server.Repo, {:shared, self()})
