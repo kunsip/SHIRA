@@ -11,7 +11,7 @@
     - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to ) [Done]
 
 #### 4th Week
-    - Setup Programming and Commit Standards
+    - Setup Programming and Commit Standards [Done]
     - Make Local Workspace git-ignored
     - Setup Login and Signup
     - Setup Forward Facing Server via GreenGeeks
