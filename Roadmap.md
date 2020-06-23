@@ -15,7 +15,7 @@
     - Make Local Workspace git-ignored
     - Setup Login and Signup
     - Setup Forward Facing Server via GreenGeeks
-    - Setup CI for Elixir
+    - Setup CI for Elixir [IP]
     - Setup Website
     - 2/3rds Done Elixir book
 ### July
