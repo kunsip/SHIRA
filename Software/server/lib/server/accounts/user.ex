@@ -11,4 +11,10 @@ defmodule Server.Accounts.User do
 
     timestamps()
   end
+
+  def changeset(user, params \\ %{}) do
+    user
+    |> cast(params, [:email])
+    |> validate_required(:email, ~r/@/)
+  end
 end

@@ -18,6 +18,9 @@ defmodule ServerWeb.Router do
     get "/users", UserController, :index
     get "/users/:id", UserController, :show
     get "/", PageController, :index
+    get "/begin", UserController, :new
+    post "/begin", UserController, :create
+    
   end
 
   # Other scopes may use custom stacks.

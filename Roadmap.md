@@ -13,11 +13,11 @@
 #### 4th Week
     - Setup Programming and Commit Standards [Done]
     - Make Local Workspace git-ignored [Done]
-    - Setup Login and Signup
-    - Setup Forward Facing Server via GreenGeeks
-    - Setup CI for Elixir [IP]
-    - Setup Website
-    - 2/3rds Done Elixir book
+    - Setup Login and Signup [IP]
+    - Setup Forward Facing Server via GreenGeeks [IP]
+    - Setup CI for Elixir [Done]
+    - Setup Website [Done]
+    - 2/3rds Done Elixir book [IP]
 ### July
 #### 1st Week
     - Design Intentions with SMART setup (Specific, Measurable, Actionable, Reasonable and Timely)

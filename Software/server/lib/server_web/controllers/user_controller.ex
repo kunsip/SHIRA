@@ -13,4 +13,9 @@ defmodule ServerWeb.UserController do
     user = Accounts.get_user(id)
     render(conn, "show.html", user: user)
   end
+
+  def new(conn, _params) do
+    changeset = Accounts.change_user(%User{}) #We want to receive a changeset back so that we can properly perform validateions, cast parameters and such
+    render(conn, "new.html", changeset: changeset)
+  end
 end
