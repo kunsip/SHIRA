@@ -8,6 +8,7 @@ defmodule Server.Accounts.User do
 
   schema "users" do
     field :email, :string
+    has_many :magic_links, Server.Accounts.MagicLink
 
     timestamps()
   end
@@ -15,6 +16,7 @@ defmodule Server.Accounts.User do
   def changeset(user, params \\ %{}) do
     user
     |> cast(params, [:email])
-    |> validate_required(:email, ~r/@/)
+    |> validate_required([:email])
+    |> validate_format(:email, ~r/@/)
   end
 end

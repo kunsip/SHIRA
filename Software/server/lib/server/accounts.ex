@@ -7,6 +7,12 @@ defmodule Server.Accounts do
   alias Server.Repo
 
 
+  def create_magic_link(attrs \\ %{}) do
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert() #Not really trying to insert here, trying to find a magic link spot and insert there.
+  end
+
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
