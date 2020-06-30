@@ -4,6 +4,7 @@ defmodule Server.Accounts.MagicLink do
     """
 
     use Ecto.Schema
+    alias Server.Accounts.SecureLinkGeneration
     import Ecto.Changeset
 
     schema "magic_links" do
@@ -14,4 +15,15 @@ defmodule Server.Accounts.MagicLink do
         timestamps()
     end
 
+    @doc false
+    def changeset(magic_link, params \\ %{}) do
+        magic_link
+        |> cast(params, [:random_string])
+        |> validate_required([:random_string])
+    end
+
+    def create_link(user) do
+        item = changeset(%{random_string: SecureLinkGeneration.generate()}, %{})
+        IO.puts inspect item
+    end
 end

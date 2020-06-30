@@ -8,8 +8,6 @@
     - Concrete goals of SHIRA with top 3 goals [Done]
     - 1 Year Roadmap with weekly goals [Done]
     - Understanding of Elixir and Phoenix [Done]
-    - Remove all repos except SHIRA from gitlab, github, bitbucket (Migrate to ) [Done]
-
 #### 4th Week
     - Setup Programming and Commit Standards [Done]
     - Make Local Workspace git-ignored [Done]
@@ -17,14 +15,13 @@
     - Setup Forward Facing Server via GreenGeeks [IP]
     - Setup CI for Elixir [Done]
     - Setup Website [Done]
-    - 2/3rds Done Elixir book [IP]
+    - Import Milestones 
 ### July
 #### 1st Week
     - Design Intentions with SMART setup (Specific, Measurable, Actionable, Reasonable and Timely)
     - Design ZUI Concept
     - Implement Extremely Simple Note Feature
     - Implement Intention Screen
-    - Finish Elixir book
 #### 2nd Week
     - Create Design Pallet and Goals
     - Design Bottom row of options and top row
@@ -53,10 +50,10 @@
 #### 1st Week
     - Design Movie Client
     - Implement Movie Client
-#### 2nd Week
+#### 2nd Week [Right here]
     - Design Heatmap of Notes using physiological perception of time from a few hours to several years)
     - Implement Heatmap
-#### 3rd Week
+#### 3rd Week 
     - Design Activity Timeline
 #### 4th Week
     - Implement Activity Timeline
@@ -69,14 +66,14 @@
     - Read User Psychology for deletion and pricing strategies
     - Write Documentation and help for SHIRA
 #### 4th Week
-    - Write 5 articles for 5 major tech sites about product
+    - Write 5 articles for 5 major tech sites about producxt [Resume Here]
 ### November
 #### 1st Week
     - Develop Media Package
 #### 2nd Week
     - Integrate Stripe Payment Processor into account
 #### 3rd Week
-    - Design User Pricing
+    - Design User Pricing 
 #### 4th Week
     - Figure out competitors
 ### December
@@ -105,7 +102,7 @@
     - Design Searching for Music Lyrics
 #### 2nd Week
     - Implement Searching for Music Lyrics
-#### 3rd Week
+#### 3rd Week [Resume Here]
     - Design Searching for Movie Scenes (using terms from movie, character dialog, position, items in hands or around, emotions)
 #### 4th Week
     - Implement Searching for Movie Scenes
@@ -120,7 +117,7 @@
     - Implement Universal Links
 ### April
 #### 1st Week
-    - Implement mood detection system via front camera
+    - Design mood detection system via front camera
 #### 2nd Week
     - Implement mood detection system via front camera
 #### 3rd Week

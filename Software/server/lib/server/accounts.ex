@@ -3,14 +3,26 @@ defmodule Server.Accounts do
   The Accounts context.
   """
 
+  alias Server.Accounts.MagicLink
   alias Server.Accounts.User
   alias Server.Repo
 
+  @doc """
+  Must pass in a user
+  """
+  def create_magic_link(user \\ %{}) do
+    case MagicLink.create_link(user) do
+      {:ok, magic_link} ->
+        IO.puts IO.inspect magic_link
+      {:error, reason} ->
+       IO.puts IO.inspect reason
+    end
+    #We need to generate magic link
+    #We need to insert magic link
+    #We need to get magic link back
 
-  def create_magic_link(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert() #Not really trying to insert here, trying to find a magic link spot and insert there.
+    #We then need to add user to magic link
+    #We then need to return magic link in {:ok, "randomstring"}
   end
 
   def change_user(%User{} = user) do
