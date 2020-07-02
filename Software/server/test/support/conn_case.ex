@@ -23,7 +23,6 @@ defmodule ServerWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import ServerWeb.ConnCase
-      alias Ecto.Adaptors.SQL.Sandbox
 
       alias ServerWeb.Router.Helpers, as: Routes
 

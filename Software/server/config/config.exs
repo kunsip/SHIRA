@@ -13,10 +13,10 @@ config :server,
 # Configures the endpoint
 config :server, ServerWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "mZD/ATFZ+Cc4QMYU2IUgEiH64k5xQB5JqC9TZS8oXA9gdXTQJe2+Ukj8gOBwAfhC",
+  secret_key_base: "OjYKMM20jZZB/rmo109n0ynbvmrmaUZaP0Lfa0nnhtOaPiu2GhOLrFrOZtIqmlL3",
   render_errors: [view: ServerWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Server.PubSub,
-  live_view: [signing_salt: "JZiu76/N"]
+  live_view: [signing_salt: "k9w7Yt/F"]
 
 # Configures Elixir's Logger
 config :logger, :console,

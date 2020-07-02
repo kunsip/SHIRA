@@ -10,8 +10,7 @@ defmodule Server.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps(),
-      preferred_cli_env: [coveralls: :test]
+      deps: deps()
     ]
   end
 
@@ -21,7 +20,7 @@ defmodule Server.MixProject do
   def application do
     [
       mod: {Server.Application, []},
-      extra_applications: [:logger, :runtime_tools, :os_mon]
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
@@ -45,12 +44,7 @@ defmodule Server.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"},
-      {:dialyxir, "~> 1.0", only: [:dev, :test], runtime: false},
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
-      {:sobelow, "~> 0.8", only: [:dev, :test], runtime: false},
-      {:doctor, "~> 0.14.0", only: [:dev, :test], runtime: false},
-      {:puid, "~> 1.0"}
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 

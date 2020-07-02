@@ -3,46 +3,102 @@ defmodule Server.Accounts do
   The Accounts context.
   """
 
-  alias Server.Accounts.MagicLink
-  alias Server.Accounts.User
+  import Ecto.Query, warn: false
   alias Server.Repo
 
+  alias Server.Accounts.User
+
   @doc """
-  Must pass in a user
+  Returns the list of users.
+
+  ## Examples
+
+      iex> list_users()
+      [%User{}, ...]
+
   """
-  def create_magic_link(user \\ %{}) do
-    case MagicLink.create_link(user) do
-      {:ok, magic_link} ->
-        IO.puts IO.inspect magic_link
-      {:error, reason} ->
-       IO.puts IO.inspect reason
-    end
-    #We need to generate magic link
-    #We need to insert magic link
-    #We need to get magic link back
-
-    #We then need to add user to magic link
-    #We then need to return magic link in {:ok, "randomstring"}
-  end
-
-  def change_user(%User{} = user) do
-    User.changeset(user, %{})
-  end
-
-  
-  def get_user(id) do
-    Repo.get(User, id)
-  end
-
-  def get_user!(id) do
-    Repo.get!(User, id)
-  end
-
-  def get_user_by(params) do
-    Repo.get_by(User, params)
-  end
-
   def list_users do
     Repo.all(User)
+  end
+
+  @doc """
+  Gets a single user.
+
+  Raises `Ecto.NoResultsError` if the User does not exist.
+
+  ## Examples
+
+      iex> get_user!(123)
+      %User{}
+
+      iex> get_user!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_user!(id), do: Repo.get!(User, id)
+
+  @doc """
+  Creates a user.
+
+  ## Examples
+
+      iex> create_user(%{field: value})
+      {:ok, %User{}}
+
+      iex> create_user(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_user(attrs \\ %{}) do
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a user.
+
+  ## Examples
+
+      iex> update_user(user, %{field: new_value})
+      {:ok, %User{}}
+
+      iex> update_user(user, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_user(%User{} = user, attrs) do
+    user
+    |> User.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a user.
+
+  ## Examples
+
+      iex> delete_user(user)
+      {:ok, %User{}}
+
+      iex> delete_user(user)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_user(%User{} = user) do
+    Repo.delete(user)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking user changes.
+
+  ## Examples
+
+      iex> change_user(user)
+      %Ecto.Changeset{data: %User{}}
+
+  """
+  def change_user(%User{} = user, attrs \\ %{}) do
+    User.changeset(user, attrs)
   end
 end

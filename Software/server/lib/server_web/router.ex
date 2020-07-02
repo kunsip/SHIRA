@@ -15,21 +15,13 @@ defmodule ServerWeb.Router do
 
   scope "/", ServerWeb do
     pipe_through :browser
-    get "/users", UserController, :index
-    get "/users/:id", UserController, :show
+
     get "/", PageController, :index
-    get "/begin", UserController, :new
-    post "/begin", UserController, :create
-    
   end
 
   # Other scopes may use custom stacks.
   # scope "/api", ServerWeb do
   #   pipe_through :api
-
-  #   scope "v1", Api.V1 do
-  #     resources "/magiclink", MagicLinkController, only: [:create] //Not impelemented yet
-  #   end
   # end
 
   # Enables LiveDashboard only for development
