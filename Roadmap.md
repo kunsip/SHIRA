@@ -102,7 +102,7 @@
     - Design Searching for Music Lyrics
 #### 2nd Week
     - Implement Searching for Music Lyrics
-#### 3rd Week [Resume Here]
+#### 3rd Week 
     - Design Searching for Movie Scenes (using terms from movie, character dialog, position, items in hands or around, emotions)
 #### 4th Week
     - Implement Searching for Movie Scenes

@@ -3,102 +3,51 @@ defmodule Server.Accounts do
   The Accounts context.
   """
 
-  import Ecto.Query, warn: false
+  import Ecto.Query, warn: true
   alias Server.Repo
 
   alias Server.Accounts.User
 
   @doc """
-  Returns the list of users.
-
-  ## Examples
-
-      iex> list_users()
-      [%User{}, ...]
-
+  Send magic link to user
   """
-  def list_users do
-    Repo.all(User)
+  def create(%Ecto.Changeset{} = user) do
+    case Repo.insert(user) do
+      {:ok, %User{} = newUser} ->
+        IO.puts inspect newUser
+        send(newUser)
+      {:error, %Ecto.Changeset{} = changeset} ->
+        existingUser = Repo.get_by(User, email: changeset.changes.email)
+        IO.puts "<> Inspecting User <>"
+        IO.puts inspect existingUser
+        send(existingUser)
+    end
   end
 
-  @doc """
-  Gets a single user.
-
-  Raises `Ecto.NoResultsError` if the User does not exist.
-
-  ## Examples
-
-      iex> get_user!(123)
-      %User{}
-
-      iex> get_user!(456)
-      ** (Ecto.NoResultsError)
-
-  """
-  def get_user!(id), do: Repo.get!(User, id)
-
-  @doc """
-  Creates a user.
-
-  ## Examples
-
-      iex> create_user(%{field: value})
-      {:ok, %User{}}
-
-      iex> create_user(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert()
+  def change_user() do
+    User.changeset(%User, %{})
+  end
+    
+  defp send(%User{} = user) do
+    user = Repo.get_by(User,email: user.email)
+    user = insert(user, user.email)
+    send_link(user)
   end
 
-  @doc """
-  Updates a user.
+  defp send(nil) do
+  end
 
-  ## Examples
+  defp insert(nil, email) do
+    changeset = User.changeset(%User{}, %{email: email})
+    Repo.insert(User, changeset)
+  end
 
-      iex> update_user(user, %{field: new_value})
-      {:ok, %User{}}
-
-      iex> update_user(user, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_user(%User{} = user, attrs) do
+  defp insert(user, _) do #No need to insert, user already exists.
     user
-    |> User.changeset(attrs)
-    |> Repo.update()
   end
 
-  @doc """
-  Deletes a user.
-
-  ## Examples
-
-      iex> delete_user(user)
-      {:ok, %User{}}
-
-      iex> delete_user(user)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_user(%User{} = user) do
-    Repo.delete(user)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking user changes.
-
-  ## Examples
-
-      iex> change_user(user)
-      %Ecto.Changeset{data: %User{}}
-
-  """
-  def change_user(%User{} = user, attrs \\ %{}) do
-    User.changeset(user, attrs)
+  defp send_link(user) do
+    IO.puts "<><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><>"
+    IO.puts inspect user
   end
 end

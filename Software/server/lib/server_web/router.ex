@@ -15,7 +15,8 @@ defmodule ServerWeb.Router do
 
   scope "/", ServerWeb do
     pipe_through :browser
-
+    get "/users", UserController, :index
+    get "/users/:id", UserController, :show
     get "/", PageController, :index
   end
 
