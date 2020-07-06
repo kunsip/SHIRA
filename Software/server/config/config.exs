@@ -10,6 +10,9 @@ use Mix.Config
 config :server,
   ecto_repos: [Server.Repo]
 
+config :sendgrid,
+  api_key: {:system, "SENDGRID_API_KEY"}
+
 # Configures the endpoint
 config :server, ServerWeb.Endpoint,
   url: [host: "localhost"],
@@ -26,6 +29,9 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :email,
+  from_email: "magiclink@sapphirepack.org",
+  subject: "Your magic link"
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
