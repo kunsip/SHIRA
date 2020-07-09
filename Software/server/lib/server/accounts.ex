@@ -26,22 +26,25 @@ defmodule Server.Accounts do
     end
   end
 
-  def authorize(magic_link) when is_bitstring(magic_link) do
+  def authorize(magic_link) when is_bitstring(magic_link) do #Need to refactor authorize to be check_magic_link
       query = from a in AuthToken,
-      where: a.inserted_at > from_now(-5, "minute") #Logic for Magic Link duration. SHOULD be a macro or constant. Not burried in accounts.ex
-
-      case Repo.one(query) do
-        %AuthToken{} -> 
-          {:ok, "Magic Link Valid"}
+      where: a.inserted_at > from_now(-5, "minute") and a.value == ^magic_link #Logic for Magic Link duration. SHOULD be a macro or constant. Not burried in accounts.ex
+      case Repo.one(query) |> Repo.preload(:user) do
+        %AuthToken{} = token -> 
+          {:ok, token.user }
         
         nil ->
           {:error, "Magic Link Invalid"}
       end
   end
 
+  def get_user(user_id) when user_id > 0 do
+    Repo.get(User, user_id)
+  end
+
+
+
   defp check_if_valid_changeset(email) do
-    IO.puts "Checking Email in 'check_if_valid_changeset'"
-    IO.inspect email
     user_changeset = User.changeset(%User{}, %{email: email})
     # We have to check one things
     # 1 That the changeset is valid before insertion

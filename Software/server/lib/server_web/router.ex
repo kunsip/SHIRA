@@ -7,10 +7,17 @@ defmodule ServerWeb.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Server.Auth
   end
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/z", ServerWeb do
+    pipe_through [:browser, Server.CanProceed]
+
+    get "/test", ZController, :index
   end
 
   scope "/", ServerWeb do
