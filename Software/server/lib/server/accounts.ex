@@ -18,14 +18,26 @@ defmodule Server.Accounts do
   def begin(email) when is_bitstring(email) do
     case check_if_valid_changeset(email) do
       {:ok, %User{} = user} ->
-        generate_token(user)
-        Email.welcome_email |> Mailer.deliver_now
+        token =  generate_token(user)
+        Email.welcome_email(email, token) |> Mailer.deliver_later
         {:ok, user}
       {:error, %Ecto.Changeset{} = changeset} ->
         {:error, changeset}
     end
   end
 
+  def authorize(magic_link) when is_bitstring(magic_link) do
+      query = from a in AuthToken,
+      where: a.inserted_at > from_now(-5, "minute") #Logic for Magic Link duration. SHOULD be a macro or constant. Not burried in accounts.ex
+
+      case Repo.one(query) do
+        %AuthToken{} -> 
+          {:ok, "Magic Link Valid"}
+        
+        nil ->
+          {:error, "Magic Link Invalid"}
+      end
+  end
 
   defp check_if_valid_changeset(email) do
     IO.puts "Checking Email in 'check_if_valid_changeset'"
@@ -54,9 +66,13 @@ defmodule Server.Accounts do
   end
 
   defp generate_token(user) do
-    AuthToken.changeset(%AuthToken{}, user) 
-    |> Repo.insert
-    |> IO.inspect 
+    authToken = AuthToken.changeset(%AuthToken{}, user) 
+    case Repo.insert(authToken) do
+      {:ok, token} ->
+        token.value
+      {:error, _} ->
+        :error
+      end
   end
 
 end

@@ -22,4 +22,14 @@ defmodule ServerWeb.UserController do
         render(conn, "index.html", changeset: changeset)
     end
   end
+
+  def show(conn, %{"id" => magic_link}) do
+    case Accounts.authorize(magic_link) do
+      {:ok, _ } ->
+        render(conn, "show.html", magic_link: magic_link)
+
+      {:error, _} ->
+        render(conn, "error.html", magic_link: magic_link)
+    end
+  end
 end

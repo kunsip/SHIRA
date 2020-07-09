@@ -1,14 +1,13 @@
 defmodule Server.Email do
     import Bamboo.Email
 
-    def welcome_email do
+    def welcome_email(email, magic_link) do
 
         new_email
-        |> to("pmierau@posteo.net")
+        |> to(email)
         |> from("magiclink@sapphirepack.org")
-        |> subject("Welcome!!!")
-        |> html_body("HTML HELLO")
-        |> text_body("TEXT HELLO")
+        |> subject("Your Magic Link")
+        |> text_body(magic_link)
     end
 end
 
