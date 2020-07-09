@@ -8,6 +8,7 @@ defmodule Server.Accounts do
   alias Server.AuthToken
   alias Server.Repo
   alias Server.Accounts.User
+  alias Server.Mailer
   alias Server.Email
 
   def change_user() do
@@ -18,7 +19,8 @@ defmodule Server.Accounts do
     case check_if_valid_changeset(email) do
       {:ok, %User{} = user} ->
         generate_token(user)
-        |> Email.send(user)
+        Email.welcome_email |> Mailer.deliver_now
+        {:ok, user}
       {:error, %Ecto.Changeset{} = changeset} ->
         {:error, changeset}
     end
