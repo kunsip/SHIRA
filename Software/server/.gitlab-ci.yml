@@ -1,0 +1,40 @@
+image: elixir:latest
+
+services:
+  - postgres:latest
+
+variables:
+  POSTGRES_DB: hello_gitlab_ci_test
+  POSTGRES_HOST: postgres
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "postgres"
+  MIX_ENV: "test"
+
+before_script:
+  - cd Software/server
+  - mix local.rebar --force
+  - mix local.hex --force
+  - mix deps.get --only test
+  - mix ecto.create
+  - mix ecto.migrate
+
+stage_1_code_format:
+  script:
+   #Stage 1 Code Format
+   - mix format --check-formatted
+
+stage_2_unreachable_code:
+  script:
+   - mix compile --warnings-as-errors
+
+stage_3_static_analysis_of_code_credo:
+  script:
+   - mix credo
+
+stage_4_code_doc_test:
+  script:
+   - mix test
+
+stage_5_phoenix_security:
+  script:
+   - mix sobelow
