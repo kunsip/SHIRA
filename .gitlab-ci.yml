@@ -1,5 +1,5 @@
 microservice_server:
   trigger:
     include:
-      - local: Software/server/.gitlab-ci.yml
+      - local: Core/.gitlab-ci.yml
     strategy: depend
