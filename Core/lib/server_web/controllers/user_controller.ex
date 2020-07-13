@@ -16,20 +16,21 @@ defmodule ServerWeb.UserController do
         |> redirect(to: Routes.page_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        IO.puts "Rendering Changeset in User Controller"
-        IO.inspect changeset
-        changeset = %{changeset | action: :insert} #Force Changeset to render errors
+        IO.puts("Rendering Changeset in User Controller")
+        IO.inspect(changeset)
+        # Force Changeset to render errors
+        changeset = %{changeset | action: :insert}
         render(conn, "index.html", changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => magic_link}) do
     case Accounts.authorize(magic_link) do
-      {:ok, %User{} = user } ->
-        Server.Auth.login(conn,user)
+      {:ok, %User{} = user} ->
+        Server.Auth.login(conn, user)
         |> render("show.html", magic_link: magic_link)
 
-      {:error, _ } ->
+      {:error, _} ->
         render(conn, "error.html", magic_link: magic_link)
     end
   end

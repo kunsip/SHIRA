@@ -12,7 +12,7 @@ defmodule Server.AuthToken do
   end
 
   @doc false
-  def changeset(auth_token, user) do 
+  def changeset(auth_token, user) do
     auth_token
     |> cast(%{}, [])
     |> put_assoc(:user, user)

@@ -10,6 +10,7 @@ defmodule Server.Repo.Migrations.CreateAuthTokens do
     end
 
     create index(:auth_tokens, [:user_id])
-    create unique_index(:auth_tokens, [:value]) #Prevents duplicate authentication tokens from being generated
+    # Prevents duplicate authentication tokens from being generated
+    create unique_index(:auth_tokens, [:value])
   end
 end

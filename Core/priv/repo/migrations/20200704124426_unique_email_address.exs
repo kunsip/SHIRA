@@ -3,6 +3,5 @@ defmodule Server.Repo.Migrations.UniqueEmailAddress do
 
   def change do
     create unique_index(:users, [:email])
-
   end
 end

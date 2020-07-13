@@ -23,7 +23,7 @@ defmodule ServerWeb.Router do
   scope "/", ServerWeb do
     pipe_through :browser
     get "/users", UserController, :index
-    post "/users", UserController, :create 
+    post "/users", UserController, :create
     get "/users/:id", UserController, :show
     get "/", PageController, :index
   end
