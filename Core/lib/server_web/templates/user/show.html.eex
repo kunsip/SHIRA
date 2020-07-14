@@ -1,0 +1,2 @@
+<h1>Showing for <%= @magic_link %></h1>
+<p>You've been authorized!!</p
