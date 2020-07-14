@@ -1,4 +1,9 @@
 defmodule Server.AuthToken do
+  @moduledoc '''
+  Generates Authentication Token for user. These tokens are unique and are used one time.
+
+  However there exists currently a possiblity that token is NOT unique. See issue #80 [https://gitlab.com/Kunsip/sapphirepack/-/issues/80]
+  '''
   alias Server.Accounts.User
   alias Phoenix.Token
   use Ecto.Schema

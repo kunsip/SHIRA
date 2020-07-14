@@ -56,8 +56,6 @@ defmodule Server.Accounts do
     if user_changeset.valid? do
       {:ok, return_user(user_changeset)}
     else
-      IO.puts("Error in the changeset")
-      IO.inspect(user_changeset)
       {:error, user_changeset}
     end
   end
@@ -73,9 +71,9 @@ defmodule Server.Accounts do
   end
 
   defp generate_token(user) do
-    authToken = AuthToken.changeset(%AuthToken{}, user)
+    auth_token = AuthToken.changeset(%AuthToken{}, user)
 
-    case Repo.insert(authToken) do
+    case Repo.insert(auth_token) do
       {:ok, token} ->
         token.value
 

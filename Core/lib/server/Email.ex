@@ -1,4 +1,7 @@
 defmodule Server.Email do
+  @moduledoc ''' 
+  Email module responsible for sending messages from SapphirePack
+  '''
   import Bamboo.Email
 
   def welcome_email(email, magic_link) do

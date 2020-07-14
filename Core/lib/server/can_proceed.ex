@@ -1,4 +1,7 @@
 defmodule Server.CanProceed do
+  @moduledoc '''
+  Allows connection to pass iff user id is connected to session otherwise redirects to root
+  '''
   import Plug.Conn
   import Phoenix.Controller
 

@@ -1,4 +1,7 @@
 defmodule ServerWeb.Telemetry do
+  @moduledoc '''
+    Telemetry Unused By SapphirePack Currently
+  '''
   use Supervisor
   import Telemetry.Metrics
 

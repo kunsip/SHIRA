@@ -16,8 +16,6 @@ defmodule ServerWeb.UserController do
         |> redirect(to: Routes.page_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        IO.puts("Rendering Changeset in User Controller")
-        IO.inspect(changeset)
         # Force Changeset to render errors
         changeset = %{changeset | action: :insert}
         render(conn, "index.html", changeset: changeset)

@@ -1,4 +1,7 @@
 defmodule Server.Accounts.User do
+  @moduledoc '''
+  Reperesents a single user
+  '''
   use Ecto.Schema
   import Ecto.Changeset
   alias Server.AuthToken
