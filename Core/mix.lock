@@ -38,6 +38,7 @@
   "pre_commit": {:hex, :pre_commit, "0.3.4", "e2850f80be8090d50ad8019ef2426039307ff5dfbe70c736ad0d4d401facf304", [:mix], [], "hexpm", "16f684ba4f1fed1cba6b19e082b0f8d696e6f1c679285fedf442296617ba5f4e"},
   "ranch": {:hex, :ranch, "1.7.1", "6b1fab51b49196860b733a49c07604465a47bdb78aa10c1c16a3d199f7f8c881", [:rebar3], [], "hexpm", "451d8527787df716d99dc36162fca05934915db0b6141bbdac2ea8d3c7afc7d7"},
   "sendgrid": {:hex, :sendgrid, "2.0.0", "16c4a24101c608a28224cf87811f2115db0abf477ac14f522ecc05a01a804bc1", [:mix], [{:jason, "~> 1.1", [hex: :jason, repo: "hexpm", optional: false]}, {:tesla, "~> 1.2", [hex: :tesla, repo: "hexpm", optional: false]}], "hexpm", "01e8d4d0f386e3a35fde5340a7938b8c33f91bddefd66e50d93f6dee2f6b1ada"},
+  "sobelow": {:hex, :sobelow, "0.10.3", "2ddf00a7b41bc9fc20b0664914d910a156c2a4246fca4bda876d3ba437df4f8b", [:mix], [], "hexpm", "33cd6cda95240b74d6c01eba79e34641c3109a6f2b69fdfba92414a27f42870e"},
   "ssh_client_key_api": {:hex, :ssh_client_key_api, "0.2.1", "335427ffda26fe5c3f1ed1011e601aba03ca2cd30623e94c6a089a068c575258", [:mix], [], "hexpm", "fe09f55a69b977816beb7a588e3eec795bb790ea6ac254f872ee9e11b5a48be6"},
   "sshkit": {:hex, :sshkit, "0.1.0", "e8f74a9e35e6929df7cd581ce43a5a9ac840cc0757381a8fc9d706909cdee4c3", [:mix], [], "hexpm", "105812e5930b9d40abb9f18e3cda917a7486c744946d1f62594ff9bde070bf35"},
   "ssl_verify_fun": {:hex, :ssl_verify_fun, "1.1.6", "cf344f5692c82d2cd7554f5ec8fd961548d4fd09e7d22f5b62482e5aeaebd4b0", [:make, :mix, :rebar3], [], "hexpm", "bdb0d2471f453c88ff3908e7686f86f9be327d065cc1ec16fa4540197ea04680"},

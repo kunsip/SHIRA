@@ -46,7 +46,8 @@ defmodule Server.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:bamboo, "~> 1.1"},
-      {:credo, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:credo, "~> 1.4", only: [:dev, :test], runtime: false},
+      {:sobelow, "~> 0.8", only: [:dev, :test]}
     ]
   end
 
