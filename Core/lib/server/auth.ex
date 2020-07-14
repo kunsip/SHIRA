@@ -1,7 +1,7 @@
 defmodule Server.Auth do
-  @moduledoc '''
+  @moduledoc """
   Responsible for authentication for users along with maintaining session state
-  '''
+  """
   # Access to Plug.Conn sorta like inheritance
   import Plug.Conn
   # require is for DSL
