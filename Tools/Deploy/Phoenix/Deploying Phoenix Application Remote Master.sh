@@ -17,7 +17,7 @@ export DATABASE_URL=ecto://postgres:postgres@localhost/server_prod
 # Advanced configuration (don't change unless you know what you are doing)
 export MIX_ENV=prod
 cd $APP_ROOT_DIRECTORY
-export SECRET_KEY_BASE=$(mix phx.gen.secret)
+export SECRET_KEY_BASE=<INSERT SECRET HERE>
 ### DO NOT EDIT BELOW SCRIPT UNLESS UPDATING MASTER SCRIPT ###
 echo "Deploying Phoenix Application $VERSION in $APP_ROOT_DIRECTORY"
 #Forwarding all external connections on port 80 to internal port 4000
