@@ -16,10 +16,3 @@ end
 
 
 //README
-
-1) Please add mix ecto.create for deploy script
-2) Please redeploy
-3.5) Please syncrhonize script from SHIRA0 to Repo/Core
-3) Please make sure email can be sent
-4) Please make sure script runs on boot
-5) Finish rest of system
