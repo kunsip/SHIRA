@@ -1,6 +1,6 @@
 #!/bin/bash
 #Pulled from /Tools/Deploy/Phoenix/Deploying\ Phoenix\ Application\ Master.sh
-#Script Version 0
+#Script Version 3
 
 # Version of the Application We're Deploying
 # Script Version 0
@@ -28,4 +28,3 @@ sudo iptables -t nat -I PREROUTING -p tcp --dport $PORT_TO_CONNECT -j REDIRECT -
 cd $APP_ROOT_DIRECTORY
 
 elixir --erl "-detached" -S mix phx.server
-
