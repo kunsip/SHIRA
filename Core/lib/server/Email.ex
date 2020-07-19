@@ -14,5 +14,3 @@ defmodule Server.Email do
   end
 end
 
-
-//README
