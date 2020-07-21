@@ -11,9 +11,10 @@
 
 	There are five universal actions:
 
-	Duplicate - This means there exists another copy to move around and modify WITHOUT affecting the 
-	Move
-	Zoom
-	Quit
-	Search
+	Duplicate - This means there exists another copy to move around and modify WITHOUT affecting the original.
+	Move - Move the current item do a different place. 
+	Zoom - Increase amount of screen that filled with a subset of the cartesian plane or increase the amount of cartesian plane that fills the screen.
+	Resize - The operator can resize the item.
+	Search - Look for something, will search the closest items, then further away and such. This should be done instantaneously to the user
 # Dependencies
+	SANE - Touch Abstraction Library 
