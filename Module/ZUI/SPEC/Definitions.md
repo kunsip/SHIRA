@@ -1,0 +1,18 @@
+# Definitions 
+ 
+| Term     |   Definition  | Rational |
+|----------|:-------------|:---------|
+| Application | Executable code that is not a module   |  Goal is to differentiate between Application and Module. Application may be lacking in certain required features to make it a module and may need  modules to act as translators and provide the required features necessary to make the application usable in SANE|
+| Document |    Executable or non executable code that matches either legacy document format or DWF format.   | We need a clear separation between Document which is something that a user can modify and an application which is something that the user cannot modify. |
+| DWF | Short for Documents without Formats. Really is a extremely explicit way of defining data such that it can easily be interpolated, referenced, stacked or accessed.  | Current ways that users have to deal with files are broken and force the user to act within the computers limits, instead of making the computer limits outside the human limits. |
+| Module | Next generation applications that are designed to never stop once started. They provide longevity, features that should have been built into first generation applications like automatic saving, rollback, history, responsiveness, Operator Centered Interactions along with following the  Three Laws of Humane Interfaces (3LHI) | Computers should work for us, not the other way round. |
+| Operator | Whoever is using the system, whether it be a human, non human intelligence or another computer | We are soon reaching the point where Cyborgs, Enhanced Humans or whatever you name you wish to use will be a reality. We want to be able to provide services that are compatible. |
+| SANE | Stands for Simple Amorphous Next Environment | This is the "operating system" or vm that runs this project. Providing an abstraction between the modules and the actual hardware or software environment |
+| SapphirePack | A not for profit organization, aiming at providing humane technology to operators, exploiting operator's strengths and buttressing their weaknesses. |
+| 3LHI | The three laws are as such: A computer shall not harm your work or, through inaction, allow your work to come to harm.  A computer shall not waste your time or require you to do more work than is strictly necessary. An interface should be humane; it should be responsive to human needs and considerate of human frailties. | Interfaces should be designed around the Operator, at somepoint in the future the 3LHI's may be irrelevant, but until then the 3LHI's are in effect. |
+| ZUI | Zooming User Interface | Allows storing the information in a non limiting and freeform way that allows accessing based on spatial mapping. Furthermore in the future the ZUI is designed in XY coordinate system which means that non human operators will be able to use it as effectively. |
+
+DWF Meaning of Interpolated - Mixing two documents togeather, that is every time that A is meantioned in document, document B is inserted at that point.
+DWF Meaining of Reference - Providing a link that allows accessing that particular file (including position within the file, zoom, cursor, etc).
+DWF Meaning of Stacked - Allowing two documents to be put ontop of each other, this is especially useful when you want to provide subtitile, HUD or anything that requires overlays information from one document on top of another document without explicity modidying either document to interpolate the other document.
+DWF Meaning of Accessed - Just like opening a document in LibreOffice. What you would consider "opening" a file.
