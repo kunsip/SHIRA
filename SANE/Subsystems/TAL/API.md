@@ -3,13 +3,13 @@ TAL (Touch Abstraction Library) provides interpretation of high level interface 
 
 TAL supports the following actions
 
-- Selection Event
-- Move Event
-- Resize Event
-- Duplicate Event
+- Selection + Move Event
+- Selection + Resize Event
+- Selection + Duplicate Event
 - Zoom Event
-- Pan Event
+- [Pan Event](Technical/Pan)
 - Search Event
 - Undo Event
 - Redo Event
+- Meta Warp Event
 
