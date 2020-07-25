@@ -1,0 +1,3 @@
+!#/bin/bash
+cd Core && mix format
+echo "Successfully run format"
