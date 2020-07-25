@@ -2,6 +2,7 @@
  
 | Term     |   Definition  | Rational |
 |----------|:-------------|:---------|
+| Acceleration Boundaries | Technical Term that denotes how movement of the ZUI operates based on operators movement of interface device like a finger based on original touch point. Movement is designed to be logarithmic to faciliate moving in local area (slow movement), to movement to nearby area (faster movement) to finally movement to far areas (warp movement).| None given |
 | Application | Executable code that is not a module   |  Goal is to differentiate between Application and Module. Application may be lacking in certain required features to make it a module and may need  modules to act as translators and provide the required features necessary to make the application usable in SANE|
 | Document |    Executable or non executable code that matches either legacy document format or DWF format.   | We need a clear separation between Document which is something that a user can modify and an application which is something that the user cannot modify. |
 | DWF | Short for Documents without Formats. Really is a extremely explicit way of defining data such that it can easily be interpolated, referenced, stacked or accessed.  | Current ways that users have to deal with files are broken and force the user to act within the computers limits, instead of making the computer limits outside the human limits. |
